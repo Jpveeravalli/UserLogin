@@ -16,7 +16,11 @@ namespace UserLogin.Controllers
         [Route("/register")]
         public IActionResult Index(RegisterPostModel registerPostModel)
         {   
-            return View();
+            if(registerPostModel == null)
+            {
+                return View();
+            }
+            return RedirectToAction("Index", "Login");
 
         }
     }
